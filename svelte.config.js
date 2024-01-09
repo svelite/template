@@ -1,13 +1,9 @@
 import svelite from 'svelitecms/config'
-import adapter from '@sveltejs/adapter-auto'
+import adapter from '@sveltejs/adapter-node'
 
-const config = svelite({
+// adapter config as string..
+export default svelite({
     kit: {
         adapter: adapter()
     }
 })
-
-
-config.kit.alias['$svelite'] = "./svelite.config.js"
-console.log(config)
-export default config;

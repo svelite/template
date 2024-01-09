@@ -1,15 +1,15 @@
+import { AdminPanelPlugin } from 'svelitecms/admin'
 import HelloWorld from './modules/HelloWorld.svelte'
-
-import {AdminPanelPlugin} from 'svelitecms'
-
 
 export default {
     plugins: [
        AdminPanelPlugin({
+           collections: [
+           ]
             // admin panel config...
-
          })
     ],
+    // custom modules
     modules: {
         HelloWorld: {
             name: 'Hello World',
@@ -17,7 +17,19 @@ export default {
             component: HelloWorld,         }
 
     },
+    // custom layouts
     layouts: {},
-    pages: [{slug: 'hello', title: 'Hello', modules: [{name: 'HelloWorld', props: {}}]}],
+    pages: [
+        {
+            slug: 'hello', 
+            title: 'Hello', 
+            modules: [
+                {
+                    name: 'HelloWorld', 
+                    props: {}
+                }
+            ]
+        }
+    ],
     api: 'http://localhost:3010/api'
 }
