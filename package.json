@@ -1,15 +1,17 @@
 {
-    "name": "svelite-template",
-    "version": "0.0.1",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "dev": "svelite",
+        "build": "svelite build"
+    },
+    "dependencies": {
+        "svelite-admin": "^0.0.2-next.8",
+        "svelitecms": "^0.0.2-next.40"
+    },
+    "svelite": {
+        "adapter": "node"
     },
     "devDependencies": {
-        "@sveltejs/adapter-auto": "^3.1.0",
-        "@sveltejs/adapter-node": "^2.1.0",
-        "svelitecms": "^0.0.2-next.30",
-        "svelte": "^5.0.0-next.31"
+        "svelte": "^5.0.0-next.34"
     }
 }

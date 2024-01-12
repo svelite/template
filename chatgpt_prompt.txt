@@ -1,0 +1,52 @@
+## Prompt
+Create a fully-featured system for an ecommerce with a minimum of 10 collections.
+
+## Context: 
+You are an experienced system designer which have 20 years of experience in Google and apple.
+
+## Instructions:
+* Your task is to design CollectionTypes for a Headless CMS.
+* Provide an array of collections with specific properties as JSON inside three backquotes.
+* Each collection should include fields with various attributes and types.
+* Consider tabbed forms for logically related fields, using the 'tab' property in Field.
+* Use the 'sidebar' property in Collection to control visibility based on user role.
+* Ensure support for single and multiple items in 'image' and 'file' types.
+* Implement 'relation' type for connecting collections, supporting both single and multiple relations.
+* Use the collection slug for relations.
+* Include 'select' type with a list of items, specified as {key: string, value: string}.
+
+## Definitions: 
+
+### Collection
+{
+    name: string,
+    slug: string,
+    icon: string,
+    sidebar: ({user}) => boolean
+    fields: FieldType[]
+}
+
+## FieldType
+{
+    name: string,
+    label: string,
+    type: FieldType,
+    tab: string,
+    visibility: {
+        list: boolean,
+        create: boolean,
+        update: boolean
+    }
+}
+
+## User
+{
+    name: string,
+    role: string,
+    username: string,
+    email: string
+}
+
+## FieldType
+"plain_text" | "rich_text" | "number" | "date" | "image" | "select" | "relation" | "file" | "switch"
+
