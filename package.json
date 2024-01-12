@@ -2,7 +2,8 @@
     "type": "module",
     "scripts": {
         "dev": "svelite",
-        "build": "svelite build"
+        "build": "svelite build",
+        "clean": "rm svelte.config.js && rm vite.config.js && rm postcss.config.js && rm tailwind.config.js"
     },
     "dependencies": {
         "svelite-admin": "^0.0.2-next.8",
